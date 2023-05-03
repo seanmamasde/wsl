@@ -14,13 +14,17 @@ iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 
 Then install this software bucket like this:
 ```powershell
-scoop bucket add wsl https://github.com/KNOXDEV/wsl
+scoop bucket add wsl https://github.com/seanmamasde/wsl
 ```
 
-Now you can quickly and automatically install the software registered here. No Windows Store necessary.
+Install apps in this bucket:
+```powershell
+scoop install wsl/<app_name>
+```
+
 For example, to install Ubuntu 20.04 LTS, just use:
 ```powershell
-scoop install wsl-ubuntu2004
+scoop install wsl/wsl-ubuntu2004
 ```
 For a full list of current supported distros, check the bucket, or just run:
 ```powershell
@@ -30,6 +34,8 @@ scoop search wsl-
 That's it! The software in this bucket should not be considered stable and may not install successfully depending on the whims of Microsoft.
 
 ### notes
+
+* This repository is forked from [here](https://github.com/KNOXDEV/wsl).
 
 * I decided to not add hashes to the manifest due to a lack of consistent versioning information. ~~It's unclear if Microsoft will push in-place upgrades of the distro download links I'm using, but that is what I suspect, in which case the hashes do more harm than good.~~ (This did happen, see issue #4) The installers themselves have built-in integrity checks, so I'm not too concerned about it.
 
